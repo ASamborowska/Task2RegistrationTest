@@ -1,5 +1,6 @@
 package Zadanie2;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -99,13 +100,18 @@ public class CodersguruRegister {
             WebElement registerButton = driver.findElement(By.id("registration-main-form"));
             registerButton.submit();
         }
-        @Then("^on the left the main website should contain \"([^\"]*)\"$")
-        public void onTheLeftTheMainWebsiteShouldContain(String name) {
-            WebElement usersNameDisplayed = driver.findElement(By.id("user-name"));
-           Assert.assertTrue(usersNameDisplayed.getText().contains(name));
-        }
+
+
 
         @And("^user is registered$")
         public void userIsRegistered() {
         }
-    }
+
+
+          @Then("^the \"([^\"]*)\" is displayed on the website$")
+         public void theIsDisplayedOnTheWebsite(String name) {
+              WebElement usersNameDisplayed = driver.findElement(By.id("user-name"));
+              Assert.assertEquals(name, usersNameDisplayed.getText());
+        }
+}
+

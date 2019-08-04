@@ -7,9 +7,9 @@ Feature: Regester private user on Codersguru website
     And I register user with "<email>" "<name>" "<surname>" "<password>" "<city>" "<postal_code>" "<street>" "<house_number>"
     And I click on checkbox "Zapoznałem się z regulaminem"
     And click on button "Zarejestruj się"
-    Then on the left the main website should contain "<name>"
+    Then the "<name>" is displayed on the website
     And user is registered
 
     Examples:
       |email       |name |surname |password |city |postal_code|street  | house_number|
-      |kmala@kmala.com|Olga  |Nowak|konfacela|Radom|00-234     |Morelowa|4            |
+      |krala@klala.com|Olga  |Nowak|konfacela|Radom|00-234     |Morelowa|4            |
