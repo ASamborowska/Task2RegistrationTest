@@ -103,15 +103,17 @@ public class CodersguruRegister {
 
 
 
-        @And("^user is registered$")
-        public void userIsRegistered() {
-        }
+
 
 
           @Then("^the \"([^\"]*)\" is displayed on the website$")
          public void theIsDisplayedOnTheWebsite(String name) {
               WebElement usersNameDisplayed = driver.findElement(By.id("user-name"));
               Assert.assertEquals(name, usersNameDisplayed.getText());
+        }
+        @And("^user is registered$")
+        public void userIsRegistered() {
+
         }
 }
 
